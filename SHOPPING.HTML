@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Products</title>
+    <style>
+        /* Modern Fonts & Gradient Background */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Title with Glowing Effect */
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .shopping-container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        /* Product Cards Grid Layout */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        /* Modern Glassmorphic Product Card */
+        .product-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Checkbox Positioned on Top Right */
+        .checkbox-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .checkbox-custom {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: #38bdf8;
+        }
+
+        /* Image Frame & Zoom Effect */
+        .image-wrapper {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: rgba(15, 23, 42, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.1);
+        }
+
+        /* Text Details */
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4ade80; /* Neon green price */
+            margin-bottom: 5px;
+        }
+
+        /* Action Buttons Styling */
+        .button-group {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        input[type="button"], 
+        input[type="reset"] {
+            width: 100%;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Button Colors */
+        .btn-purchase {
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-purchase:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+        }
+
+        .btn-clear {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.4) !important;
+        }
+
+        .btn-clear:hover {
+            background: rgba(239, 68, 68, 0.4);
+            color: white;
+        }
+
+        .btn-back {
+            background: rgba(148, 163, 184, 0.1);
+            color: #cbd5e1;
+            border: 1px solid rgba(148, 163, 184, 0.2) !important;
+        }
+
+        .btn-back:hover {
+            background: rgba(148, 163, 184, 0.2);
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        /* Responsive Fix */
+        @media (max-width: 500px) {
+            .btn-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Online Shopping Products</h2>
+
+    <div class="shopping-container">
+        <form action="purchase.html" method="post">
+            
+            <!-- Products Grid -->
+            <div class="product-grid">
+                
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="product" value="Phone" class="checkbox-custom">
+                    </div>
+                    <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/EX2/VIDEO.HTML" class="image-wrapper">
+                        <img src="C:\Users\SARWESH\OneDrive\Desktop\HTML2\image\F27.JPG" alt="Oppo F27 5G" class="product-img">
+                    </a>
+                    <span class="product-name">Oppo F27 5G</span>
+                    <span class="product-price">₹25,000</span>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="product" value="Laptop" class="checkbox-custom">
+                    </div>
+                    <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/EX2/VIDEO.HTML" class="image-wrapper">
+                        <img src="C:\Users\SARWESH\OneDrive\Desktop\HTML2\image\laptop.jpg" alt="ASUS Vivobook 16X" class="product-img">
+                    </a>
+                    <span class="product-name">ASUS Vivobook 16X</span>
+                    <span class="product-price">₹55,000</span>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="product" value="Headphone" class="checkbox-custom">
+                    </div>
+                    <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/EX2/VIDEO.HTML">
+                        <img src="C:\Users\SARWESH\OneDrive\Desktop\HTML2\image\oppo.jpg" alt="OPPO Enco Buds2" class="product-img">
+                    </a>
+                    <span class="product-name">OPPO Enco Buds2</span>
+                    <span class="product-price">₹2,000</span>
+                </div>
+
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <div class="btn-row">
+                    <input type="reset" value="Clear Selection" class="btn-clear">
+                    <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/EX2/SHOPPING.DETAILS.HTML">
+                        <input type="button" value="Purchase Details" class="btn-purchase">
+                    </a>
+                </div>
+                <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/EX2/DETAILS.HTML">
+                    <input type="button" value="Back to Login" class="btn-back">
+                </a>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Details</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:30px;
+            font-family:Arial, Helvetica, sans-serif;
+            background:linear-gradient(to right,#74ebd5,#9face6);
+        }
+
+        h2{
+            text-align:center;
+            color:white;
+            font-size:35px;
+        }
+
+        form{
+            width:650px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0px 0px 20px gray;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        td{
+            padding:12px;
+            border:1px solid #cccccc;
+        }
+
+        input[type=text],
+        input[type=tel],
+        input[type=email],
+        input[type=number],
+        input[type=file],
+        select,
+        textarea{
+            width:100%;
+            padding:8px;
+            border:1px solid #888;
+            border-radius:5px;
+            box-sizing:border-box;
+        }
+
+        textarea{
+            resize:none;
+        }
+
+        input[type=radio]{
+            margin-top:8px;
+        }
+
+        input[type=button],
+        input[type=reset]{
+
+            width:180px;
+            padding:10px;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            margin:5px;
+            color:white;
+        }
+
+        input[type=reset]{
+            background:#ff4d4d;
+        }
+
+        input[value="Confrim Purchase"]{
+            background:#28a745;
+        }
+
+        input[value="back"]{
+            background:#007bff;
+        }
+
+        input[type=button]:hover,
+        input[type=reset]:hover{
+            opacity:0.8;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Purchase Details</h2>
+
+<form action="success.html" method="post">
+
+<table>
+
+<tr>
+    <td>Customer Name</td>
+    <td><input type="text" name="name" required></td>
+</tr>
+
+<tr>
+    <td>Phone Number</td>
+    <td><input type="tel" name="phone" required></td>
+</tr>
+
+<tr>
+    <td>Email</td>
+    <td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+    <td>Delivery Address</td>
+    <td><textarea name="address" rows="4"></textarea></td>
+</tr>
+
+<tr>
+    <td>City</td>
+    <td><input type="text" name="city"></td>
+</tr>
+
+<tr>
+    <td>Pincode</td>
+    <td><input type="text" name="pincode"></td>
+</tr>
+
+<tr>
+    <td>Product Name</td>
+    <td>
+        <select name="product">
+            <option>Smart Phone</option>
+            <option>Laptop</option>
+            <option>School Bag</option>
+            <option>Wallet</option>
+            <option>Shirt</option>
+            <option>Shoes</option>
+            <option>Watch</option>
+            <option>Headphone</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Quantity</td>
+    <td><input type="number" name="quantity" min="1" max="10"></td>
+</tr>
+
+<tr>
+    <td>Color</td>
+    <td><input type="color" name="color"></td>
+</tr>
+
+<tr>
+    <td>Payment Method</td>
+    <td>
+        <input type="radio" name="payment"> Cash on Delivery<br>
+        <input type="radio" name="payment"> Credit Card<br>
+        <input type="radio" name="payment"> Debit Card<br>
+        <input type="radio" name="payment"> UPI
+    </td>
+</tr>
+
+<tr>
+    <td>Upload Payment Screenshot</td>
+    <td><input type="file"></td>
+</tr>
+
+<tr>
+    <td>Additional Comments</td>
+    <td><textarea rows="4"></textarea></td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+
+        <input type="reset" value="Clear"><br><br>
+
+        <a href="logout.html">
+            <input type="button" value="Confrim Purchase">
+        </a>
+
+        <br><br>
+
+        <a href="Shopping.html">
+            <input type="button" value="back">
+        </a>
+
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
