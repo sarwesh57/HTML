@@ -1,121 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Form</title>
-
-    <style>
-        body{
-            margin:0;
-            font-family:Arial, sans-serif;
-            background:url("C:\Users\SARWESH\OneDrive\Desktop\HTML2\image\flipkart.jpeg");
-            background-size:cover;
-        }
-
-        .login-box{
-            width:350px;
-            margin:100px auto;
-            background:white;
-            padding:20px;
-            border-radius:8px;
-            box-shadow:0 0 10px gray;
-        }
-
-        h2{
-            text-align:center;
-            color:darkblue;
-        }
-
-        table{
-            width:100%;
-        }
-
-        td{
-            padding:8px;
-        }
-
-        input[type=text],
-        input[type=password]{
-            width:100%;
-            padding:8px;
-            border:1px solid gray;
-            border-radius:4px;
-        }
-
-        .buttons{
-            text-align:center;
-            margin-top:15px;
-        }
-
-        .buttons input{
-            padding:10px 20px;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            margin:5px;
-        }
-
-        .login{
-            background:green;
-            color:white;
-        }
-
-        .clear{
-            background:red;
-            color:white;
-        }
-
-        .buttons input:hover{
-            opacity:0.9;
-        }
-    </style>
-
+    <title>User Details Form</title>
 </head>
+<body background="C:\Users\SARWESH\OneDrive\Desktop\HTML2\image\flip.jpeg">
 
-<body>
+<h1 align="center">User Details Form</h1>
 
-<div class="login-box">
+<form action="shopping.html" method="post">
 
-<h2>Login Form</h2>
-
-<form action="DETAILS.HTML">
-
-<table>
+<table border="1" align="center" cellpadding="8">
 
 <tr>
-    <td>Username</td>
+    <td>Full Name</td>
+    <td><input type="text" name="fullname" required></td>
 </tr>
 
 <tr>
+    <td>Gender</td>
     <td>
-        <input type="text" name="username" placeholder="Enter Username" required>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
     </td>
 </tr>
 
 <tr>
-    <td>Password</td>
+    <td>Date of Birth</td>
+    <td><input type="date" name="dob"></td>
 </tr>
 
 <tr>
+    <td>Phone Number</td>
+    <td><input type="tel" name="phone" required></td>
+</tr>
+
+<tr>
+    <td>Email</td>
+    <td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+    <td>Address</td>
+    <td><textarea name="address" rows="4" cols="25"></textarea></td>
+</tr>
+
+<tr>
+    <td>City</td>
+    <td><input type="text" name="city"></td>
+</tr>
+
+<tr>
+    <td>State</td>
+    <td><input type="text" name="state"></td>
+</tr>
+
+<tr>
+    <td>Pincode</td>
+    <td><input type="text" name="pincode"></td>
+</tr>
+
+<tr>
+    <td>Country</td>
     <td>
-        <input type="password" name="password" placeholder="Enter Password" required>
+        <select name="country">
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Canada</option>
+            <option>Australia</option>
+        </select>
     </td>
 </tr>
+
+<tr>
+    <td colspan="2" align="center">
+       
+        <input type="reset" value="Clear"><br><br>
+        <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/Shopping%20.html">
+        <input type="button" value="Next"></a><br><br>
+         <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/FRONT.HTML">
+         <input type="button" vaLue="back"></a>
+ 
+    </td>
+</tr>
+
 
 </table>
 
-<div class="buttons">
-
-<a href="DETAILS.HTML">
-    <input type="button" value="Login" class="login">
-</a>
-
-<input type="reset" value="Clear" class="clear">
-
-</div>
-
 </form>
-
-</div>
 
 </body>
 </html>

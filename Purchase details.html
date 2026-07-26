@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Details</title>
+</head>
+<body>
+
+<h2 align="center">Purchase Details</h2>
+
+<form action="success.html" method="post">
+
+<table border="1" align="center" cellpadding="8">
+
+<tr>
+    <td>Customer Name</td>
+    <td><input type="text" name="name" required></td>
+</tr>
+
+<tr>
+    <td>Phone Number</td>
+    <td><input type="tel" name="phone" required></td>
+</tr>
+
+<tr>
+    <td>Email</td>
+    <td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+    <td>Delivery Address</td>
+    <td><textarea name="address" rows="4" cols="25"></textarea></td>
+</tr>
+
+<tr>
+    <td>City</td>
+    <td><input type="text" name="city"></td>
+</tr>
+
+<tr>
+    <td>Pincode</td>
+    <td><input type="text" name="pincode"></td>
+</tr>
+
+<tr>
+    <td>Product Name</td>
+    <td>
+        <select name="product">
+            <option>Smart Phone</option>
+            <option>Laptop</option>
+            <option>School Bag</option>
+            <option>Wallet</option>
+            <option>Shirt</option>
+            <option>Shoes</option>
+            <option>Watch</option>
+            <option>Headphone</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Quantity</td>
+    <td>
+        <input type="number" name="quantity" min="1" max="10">
+    </td>
+</tr>
+
+<tr>
+    <td>Color</td>
+    <td>
+        <input type="color" name="color">
+    </td>
+</tr>
+<tr>
+    <td>Payment Method</td>
+    <td>
+        <input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery<br>
+        <input type="radio" name="payment" value="Credit Card"> Credit Card<br>
+        <input type="radio" name="payment" value="Debit Card"> Debit Card<br>
+        <input type="radio" name="payment" value="UPI"> UPI
+    </td>
+</tr>
+
+<tr>
+    <td>Upload Payment Screenshot</td>
+    <td>
+        <input type="file" name="paymentproof">
+    </td>
+</tr>
+
+
+    <td>Additional Comments</td>
+    <td>
+        <textarea name="comments" rows="4" cols="25"></textarea>
+    </td>
+</tr>
+
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+        
+        <input type="reset" value="Clear"><br><br>
+        <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/logout.html">
+        <input type="button" value="Confrim Purchase"></a><br><br>
+         <a href="file:///C:/Users/SARWESH/OneDrive/Desktop/HTML2/Shopping%20.html">
+        <input type="button" value="back"></a>
+<body style="background-color: lightblue;">
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
